@@ -6,6 +6,16 @@
 
 #include "ngramsLocations.h"
 
+void latLongList_free ( LatLongList_t* lat_lon_list ) {
+    if ( lat_lon_list ) {
+        if ( lat_lon_list->ngram )
+            free ( lat_lon_list->ngram );
+        if ( lat_lon_list->lat_lon )
+            free ( lat_lon_list->lat_lon );
+        free ( lat_lon_list );
+    }
+}
+
 int ngramsLocations_add_lat_lon_list ( const char *ngram, LatLongList_t* lat_lon_list, hashTable_t *ngrams_locations ) {
     int rc = EXIT_FAILURE;
     int _rc = HT_FAILURE;

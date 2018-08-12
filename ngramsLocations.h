@@ -21,5 +21,6 @@ int ngramsLocations_add_lat_lon_list ( const char *ngram, LatLongList_t* lat_lon
 int ngramsLocations_serialise ( ngramsLocations_t *ngrams_locations, const char *filename );
 ngramsLocations_t *ngramsLocations_deserialise ( const char *filename );
 void ngramsLocations_free ( ngramsLocations_t *ngrams_locations );
+void latLongList_free ( LatLongList_t* lat_lon_list );
 
 #endif
